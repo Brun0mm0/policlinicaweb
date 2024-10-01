@@ -1,3 +1,8 @@
+:root {
+    --primary: #ddd;
+    --hover: #555555;
+}
+
 .br-popup-container {
     position: absolute;
     background-color: rgba(0, 154, 218, 0.9);
@@ -22,13 +27,13 @@
     animation-duration: .5s;
 }
 
-.br-popup-modal {
+.br-popup-modal-container {
     position: fixed;
     height: 100vh;
     width: 100%;
-    display: grid;
-    grid-template: 2/1;
-    place-content: center;
+    padding: 10rem 0rem;
+    display: flex;
+    justify-content: center;
     opacity: 0;
 }
 
@@ -56,7 +61,7 @@
     position: absolute;
     width: 100%;
     height: 4px;
-    background-color: #ddd;
+    background-color: var(--primary);
     top: 50%;
     left: 0;
     transform-origin: center;
@@ -65,7 +70,7 @@
 }
 
 .br-cerrar:hover span {
-    background-color: #555555;
+    background-color: var(--hover);
 }
 
 .br-cerrar span:first-child {
@@ -74,6 +79,74 @@
 .br-cerrar span:last-child {
     transform: rotate(-45deg);
 }
+
+.br-popup-prev {
+    position: relative;
+    margin-right: 1rem;
+    width: 20px;
+    height: 100%;
+    cursor: pointer;
+}
+.br-popup-prev span {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary);
+    top: 50%;
+    left: 0;
+    transform-origin: left;
+    border-radius: 6px;
+    transition: all .2s;
+}
+.br-popup-prev:hover {
+    animation-name: selected;
+    animation-duration: .2s;
+}
+.br-popup-prev:hover span {
+    background-color: var(--hover);
+}
+
+.br-popup-prev span:first-child {
+    transform: rotate(60deg) translateY(-2px);
+}
+.br-popup-prev span:last-child {
+    transform: rotate(-60deg) translateY(2px);
+}
+
+.br-popup-next {
+    position: relative;
+    margin-left: 1rem;
+    width: 20px;
+    height: 100%;
+    cursor: pointer;
+}
+.br-popup-next span {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary);
+    top: 50%;
+    left: 0;
+    transform-origin: right;
+    border-radius: 6px;
+    transition: all .2s;
+}
+.br-popup-next:hover {
+    animation-name: selected;
+    animation-duration: .2s;
+}
+.br-popup-next:hover span {
+    background-color: var(--hover);
+}
+
+.br-popup-next span:first-child {
+    transform: rotate(60deg) translateY(2px);
+}
+.br-popup-next span:last-child {
+    transform: rotate(-60deg) translateY(-2px);
+}
+
+
 
 
 @media(max-width: 1024px) {
@@ -119,5 +192,17 @@
     }
     to {
         opacity: 0;
+    }
+}
+
+@keyframes selected {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
     }
 }

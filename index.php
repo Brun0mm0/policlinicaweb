@@ -28,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   
   <title>Home</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
-  <link rel="stylesheet" href="assets/br-style/br-popup.css?3">
+  <link rel="stylesheet" href="assets/br-style/br-popup.css?1.1">
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="assets/icon54-v2/style.css">
@@ -976,7 +976,8 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/formoid.min.js"></script>
-  <script src="assets/br-style/br-script.js?1"></script>
+  <script src="assets/br-style/br-script.js?1.1"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
   <!-- <script src="assets/br-style/br-popup.css"></script> -->
   
 
