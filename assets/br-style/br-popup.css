@@ -1,0 +1,123 @@
+.br-popup-container {
+    position: absolute;
+    background-color: rgba(0, 154, 218, 0.9);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    height: 100%;
+    z-index: 2000;
+    opacity: 0;
+}
+
+.fade-in {
+    animation-name: fadeIn;
+    animation-fill-mode: forwards;
+    animation-duration: .5s;
+}
+
+.fade-out {
+    animation-name: fadeOut;
+    animation-fill-mode: forwards;
+    animation-duration: .5s;
+}
+
+.br-popup-modal {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template: 2/1;
+    place-content: center;
+    opacity: 0;
+}
+
+.br-popup-modal > img{
+    max-height: 600px;
+}
+
+.br-popup-cerrar {
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 5000;
+}
+
+.br-cerrar {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    /* background: orangered; */
+}
+
+.br-cerrar span {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #ddd;
+    top: 50%;
+    left: 0;
+    transform-origin: center;
+    border-radius: 6px;
+    transition: all .2s;
+}
+
+.br-cerrar:hover span {
+    background-color: #555555;
+}
+
+.br-cerrar span:first-child {
+    transform: rotate(45deg);
+}
+.br-cerrar span:last-child {
+    transform: rotate(-45deg);
+}
+
+
+@media(max-width: 1024px) {
+    .br-popup-modal > img{
+        max-height: 400px;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .br-popup-modal{
+        row-gap: 16px;
+    }
+    .br-popup-modal > img {
+        max-height: auto;
+        max-width: 100%;
+    }
+
+    .br-popup-button {
+        place-content: center;
+    }
+
+  
+
+    .br-popup-modal > img {
+        max-height: none;
+        max-width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
