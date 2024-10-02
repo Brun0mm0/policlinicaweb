@@ -23,12 +23,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/logo-top-240x76.jpg" type="image/x-icon">
-  <meta name="description" content="">
-  
+  <meta name="description" content="Policlínica Bancaria, web institucional de la policlínica bancaria.">
   
   <title>Home</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
-  <link rel="stylesheet" href="assets/br-style/br-popup.css?1">
+  <link rel="stylesheet" href="assets/br-style/br-popup.css?1.2">
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="assets/icon54-v2/style.css">
@@ -510,6 +509,8 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
                 <div class="card-box">
                     <a href="assets/images/cartilla-septiembre.pdf" target="_blank"><h4 class="card-title mbr-fonts-style display-5">Cartilla De Consultorios Y Prestaciones</h4></a>
                     <!-- <a href="cartilla.php"><h4 class="card-title mbr-fonts-style display-5">Cartilla De Consultorios Y Prestaciones</h4></a> -->
+                    
+                   
                 </div>
               </div>
             </div>
@@ -974,7 +975,8 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/formoid.min.js"></script>
-  <script src="assets/br-style/br-script.js?4"></script>
+  <script src="assets/br-style/br-script.js?1.1"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
   <!-- <script src="assets/br-style/br-popup.css"></script> -->
   
 

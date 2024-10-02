@@ -74,7 +74,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 <?include("inc/menu.php")?>
 
-<div class="modal mbr-popup cid-sku50ttUcz fade" tabindex="-1" role="dialog" data-overlay-color="#000000" data-overlay-opacity="0.8" id="mbr-popup-5" aria-hidden="true">
+<!-- <div class="modal mbr-popup cid-sku50ttUcz fade" tabindex="-1" role="dialog" data-overlay-color="#000000" data-overlay-opacity="0.8" id="mbr-popup-5" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header pb-0">
@@ -247,18 +247,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                     </div>
                 </div>
             </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
+        </div> -->
 
 <?
 include('Mobile_Detect.php');
@@ -266,15 +255,8 @@ $detect = new Mobile_Detect;
 
 if (!$detect->isMobile()  && !$detect->isTablet() ){
 ?>
-
-
-
   
-
-  
-  <section class="header4 cleanm4_header4 cid-sLyV7pnvX9 mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=OxX7HjdCSl8" id="header4-1">
-
-	
+  <section class="header4 cleanm4 cid-sLyV7pnvX9 mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=OxX7HjdCSl8" id="header4-1">
 
 	<div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(11, 99, 125);">
 	</div>
@@ -284,7 +266,6 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
 			<div class="col-lg-12 col-md-12">
 				<div class="wrap d-flex flex-column">
 					<!-- <h1 class="mbr-section-title mbr-fonts-style mbr-bold align-left w-100 display-2" style="color:white">Policlinica Bancaria</h1> -->
-					
 					<p class="mbr-text align-left mbr-fonts-style mt-4 display-4"></p>
 					<div class="buttons-wrap d-flex mt-4 w-100 justify-content-start">
 						
@@ -329,10 +310,8 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
 	</div>
 	
 </section>
-<?}else{?>
-<section class="header4 cleanm4_header4 cid-sLyW8K7QBz mbr-fullscreen" id="header4-3">
-
-	
+    <?} else {?>
+<section class="header4 cleanm4 cid-sLyW8K7QBz mbr-fullscreen" id="header4-3">
 
 	<div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(11, 99, 125);">
 	</div>
@@ -342,7 +321,6 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
 			<div class="col-lg-12 col-md-12">
 				<div class="wrap d-flex flex-column">
 					<!-- <h1 class="mbr-section-title mbr-fonts-style mbr-bold align-left w-100 display-2" style="color:white">Policlinico Bancario</h1> -->
-					
 					<p class="mbr-text align-left mbr-fonts-style mt-4 display-4"></p>
 					<div class="buttons-wrap d-flex mt-4 w-100 justify-content-start">
 						
@@ -388,45 +366,14 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
 	
 </section>
 
-<?}?>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<? } ?>
 <section class="header1 petsm4_header1 cid-slOxsFEDGc" id="header1-t">
-
-	
-
-	
-
 	<div class="container-fluid">
 		<div class="row"></div>
 	</div>
 </section>
 
-
-
-
-
-
-
-
-
 <section class="header1 petsm4_header1 cid-slOxsFEDGc" id="header1-t">
-
-	
-
-	
-
 	<div class="container-fluid">
 		<div class="row">
 
@@ -434,25 +381,9 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
 	</div>
 </section>
 
-
-
-
-
-
-
-
-
-
 <section class="features1 cid-shRho7htj7" id="features1-0">
-
-    
-
-    
-
     <div class="container-fluid">
-        
          <div class="row showArrow">
-
 			<div class="card col-md-6 col-lg-3">
                 <div class="card-inner">
                 <span class="circle"></span>
@@ -535,66 +466,18 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
                 </div>
               </div>
             </div>
-
-             
-
         </div>
-        
     </div>
 </section>
 
 <section class="header1 petsm4_header1 cid-slOxsFEDGc" id="header1-t">
-
-	
-
-	
-
 	<div class="container-fluid">
 		<div class="row"></div>
 	</div>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <section class="features1 cid-rGtUjO6bAE" id="features3-4">
-
-    
-
-    
+   
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
@@ -637,7 +520,8 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
                 <div class="card-box m-auto">
                     <h4 class="card-title align-center pb-3 mbr-white mbr-bold mbr-fonts-style display-5">Emergencias y&nbsp; visitas médicas</h4>
                     <h5 class="link align-center mbr-semibold mbr-white mbr-fonts-style display-4"><a href="#" class="text-white text-primary" data-toggle="modal" data-target="#mbr-popup-v">Ver más</a></h5>
-                </div> --><a href="tel:08005556722"><img src="assets/images/telefono-emergencias500.jpg" class="media" width="500" height="" alt=""/></a></div>
+                </div> -->
+            <a href="tel:08005556722"><img src="assets/images/telefono-emergencias500.jpg" class="media" width="500" height="" alt=""/></a></div>
 
             <div class="card col-12 col-md-6 col-lg-6">
 
@@ -678,30 +562,17 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
                 <div class="card-box m-auto">
                     <h4 class="card-title align-center pb-3 mbr-white mbr-bold mbr-fonts-style display-5">Derivaciones<br> y traslados</h4>
                     <h5 class="link align-center mbr-semibold mbr-white mbr-fonts-style display-4"><a href="#" class="text-white text-primary" data-toggle="modal" data-target="#mbr-popup-w">Ver más</a></h5>
-                </div> --><a href="tel:45868809"><img src="assets/images/telefono_derivaciones500.jpg" class="media" width="500" height="" alt=""/></a></div>
-
-
-
+                </div> -->
+                <a href="tel:45868809"><img src="assets/images/telefono_derivaciones500.jpg" class="media" width="500" height="" alt=""/></a></div>
         </div>
-
     </div>
 
 </section>
 
 <section class="team cid-shRjEAiZ19" id="team-1">
 
-    
-
-    
-    
-    
-    
-    
-    
     <div class="container">
         <div class="row">
-            
-        
         
         <div class="card__wrap col-lg-4 col-md-4 col-sm-4">
                 <div class="card">
@@ -715,15 +586,12 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
                     <div class="hover__socicon">
                         <div>
                               
-                              
-                              
                         <a href="#" target="_blank" class="icons__wrap">
                                 <span class="mbr-iconfont mobi-mbri-info mobi-mbri" style="color: rgb(249, 244, 177); fill: rgb(249, 244, 177);"></span>
                           </a></div>
                     </div>
                 </div>
           </div>
-		  
 		  
 		  <div class="card__wrap col-lg-4 col-md-4 col-sm-4">
                 <div class="card">
@@ -736,8 +604,6 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
                     </div>
                     <div class="hover__socicon">
                         <div>
-                              
-                              
                               
                         <a href="donar-sangre.php" class="icons__wrap">
                                 <span class="mbr-iconfont mobi-mbri-info mobi-mbri" style="color: rgb(249, 244, 177); fill: rgb(249, 244, 177);"></span>
@@ -756,8 +622,6 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
                     <div class="hover__socicon">
                         <div>
                               
-                              
-                              
                         <a href="corona-antigripal.php" class="icons__wrap">
                                 <span class="mbr-iconfont mobi-mbri-info mobi-mbri" style="color: rgb(249, 244, 177); fill: rgb(249, 244, 177);"></span>
                           </a></div>
@@ -768,10 +632,6 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
 </section>
 <a name="links"></a>
 <section class="extTeams cid-slJ8m3fOzE" id="extTeams5-h">
-
-    
-
-    
     
     <div class="container">
         <div class="row justify-content-center">
@@ -893,58 +753,45 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
 <?if(!$_SESSION["envio"]){?>
 <!--Formbuilder Form-->
 <form  method="POST" name="contacto" id="contacto" class="mbr-form form-with-styler" >
-
-<div class="dragArea form-row">
-<div class="col-lg-6 col-md-12 col-sm-12 form-group" data-for="nameFirst">
-<input type="text" name="nombre" placeholder="Nombre" data-form-field="nameFirst" class="form-control display-7" value="" id="nameFirst-form1-b" required>
-</div>
-<div class="col-lg-6 col-md-12 col-sm-12 form-group" data-for="nameLast">
-<input type="text" name="apellido" placeholder="Apellido" data-form-field="nameLast" class="form-control display-7" value="" id="nameLast-form1-b" required>
-</div>
-<div data-for="text2" class="col-lg-12 col-md-12 col-sm-12 form-group">
-<input type="text" name="direccion" placeholder="Dirección" data-form-field="text" class="form-control display-7" value="" id="text2-form1-b">
-</div>
-<div data-for="email" class="col-lg-6 col-md-12 col-sm-12 form-group">
-<input type="email" name="email" placeholder="E-mail" data-form-field="email" class="form-control display-7" value="" id="email-form1-b" required>
-</div>
-<div data-for="phone" class="col-lg-6 col-md-12 col-sm-12 form-group">
-<input type="tel" name="telefono" placeholder="Teléfono"  data-form-field="phone" class="form-control display-7" value="" id="phone-form1-b">
-</div>
-
-
-
-<div data-for="textarea" class="col-lg-12 col-md-12 col-sm-12 form-group">
-<textarea name="mensaje" placeholder="Mensaje"  data-form-field="textarea" class="form-control display-7" id="textarea-form1-b" required></textarea>
-</div>
-<div class="col-auto">
-<button type="submit" class="btn btn-primary display-7" onclick="document.forms['contacto'].submit();">Enviar</button>
-</div>
-</div>
+    <div class="dragArea form-row">
+    <div class="col-lg-6 col-md-12 col-sm-12 form-group" data-for="nameFirst">
+        <input type="text" name="nombre" placeholder="Nombre" data-form-field="nameFirst" class="form-control display-7" value="" id="nameFirst-form1-b" required>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 form-group" data-for="nameLast">
+        <input type="text" name="apellido" placeholder="Apellido" data-form-field="nameLast" class="form-control display-7" value="" id="nameLast-form1-b" required>
+    </div>
+    <div data-for="text2" class="col-lg-12 col-md-12 col-sm-12 form-group">
+        <input type="text" name="direccion" placeholder="Dirección" data-form-field="text" class="form-control display-7" value="" id="text2-form1-b">
+    </div>
+    <div data-for="email" class="col-lg-6 col-md-12 col-sm-12 form-group">
+        <input type="email" name="email" placeholder="E-mail" data-form-field="email" class="form-control display-7" value="" id="email-form1-b" required>
+    </div>
+    <div data-for="phone" class="col-lg-6 col-md-12 col-sm-12 form-group">
+        <input type="tel" name="telefono" placeholder="Teléfono"  data-form-field="phone" class="form-control display-7" value="" id="phone-form1-b">
+    </div>
+    <div data-for="textarea" class="col-lg-12 col-md-12 col-sm-12 form-group">
+        <textarea name="mensaje" placeholder="Mensaje"  data-form-field="textarea" class="form-control display-7" id="textarea-form1-b" required></textarea>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary display-7" onclick="document.forms['contacto'].submit();">Enviar</button>
+    </div>
+    </div>
 </form><!--Formbuilder Form-->
 <?}else{?>
-<h3 class="icon-title mbr-bold mbr-fonts-style display-7">Gracias por comunicarse con nosotros,<BR>en breve nos contactaremos con Ud.</h3>
-
+    <h3 class="icon-title mbr-bold mbr-fonts-style display-7">Gracias por comunicarse con nosotros,<BR>en breve nos contactaremos con Ud.</h3>
 <?}?>
-</div>
-        </div>
+    </div>
+    </div>
     </div>
 </section>
 
 <section class="map1 cid-slOw5wUSpT" id="map1-s">
-
-     
-
     <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNveGQ9bfpKFwWzQLLftrR9hNiHwdqQG8&amp;q=policlinico bancario, caba, buenos aires, argentina" allowfullscreen=""></iframe></div>
 </section>
 
 <section class="form cid-rGtUn0OFxn" id="footer2-e"></section>
 
 <section class="cid-rGtUo6gJTl" id="footer1-f">
-
-    
-
-    
-
     <div class="container">
         <div class="media-container-row align-center mbr-white">
             <div class="col-12">
@@ -956,39 +803,34 @@ if (!$detect->isMobile()  && !$detect->isTablet() ){
   </div>
 </section>
 
-
 <script src="assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="assets/popper/popper.min.js"></script>
-  <script src="assets/tether/tether.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/smoothscroll/smooth-scroll.js"></script>
-  <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
-  <script src="assets/popup-plugin/script.js"></script>
-  <script src="assets/popup-overlay-plugin/script.js"></script>
-  <script src="assets/chatbutton/floating-wpp.js"></script>
-  <script src="assets/chatbutton/script.js"></script>
-  <script src="assets/mbr-switch-arrow/mbr-switch-arrow.js"></script>
-  <script src="assets/formstyler/jquery.formstyler.js"></script>
-  <script src="assets/formstyler/jquery.formstyler.min.js"></script>
-  <script src="assets/datepicker/jquery.datetimepicker.full.js"></script>
-  <script src="assets/dropdown/js/nav-dropdown.js"></script>
-  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
-  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
-  <script src="assets/theme/js/script.js"></script>
-  <script src="assets/formoid.min.js"></script>
-  <script src="assets/br-style/br-script.js?1.1"></script>
-  <script src="https://www.youtube.com/iframe_api"></script>
-  <!-- <script src="assets/br-style/br-popup.css"></script> -->
-  
+<script src="assets/popper/popper.min.js"></script>
+<script src="assets/tether/tether.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/smoothscroll/smooth-scroll.js"></script>
+<script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
+<script src="assets/popup-plugin/script.js"></script>
+<script src="assets/popup-overlay-plugin/script.js"></script>
+<script src="assets/chatbutton/floating-wpp.js"></script>
+<script src="assets/chatbutton/script.js"></script>
+<script src="assets/mbr-switch-arrow/mbr-switch-arrow.js"></script>
+<script src="assets/formstyler/jquery.formstyler.js"></script>
+<script src="assets/formstyler/jquery.formstyler.min.js"></script>
+<script src="assets/datepicker/jquery.datetimepicker.full.js"></script>
+<script src="assets/dropdown/js/nav-dropdown.js"></script>
+<script src="assets/dropdown/js/navbar-dropdown.js"></script>
+<script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+<script src="assets/theme/js/script.js"></script>
+<script src="assets/formoid.min.js"></script>
 
+<script src="assets/br-style/br-script.js?1.1"></script>
 
+<script src="https://www.youtube.com/iframe_api"></script>
 
-  <script src="video/assets/playervimeo/vimeo_player.js"></script>
-  <script src="video/assets/ytplayer/jquery.mb.ytplayer.min.js"></script>
-  <script src="video/assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>
-      <script src="video/assets/theme/js/script.js"></script>
-
-  
+<script src="video/assets/playervimeo/vimeo_player.js"></script>
+<script src="video/assets/ytplayer/jquery.mb.ytplayer.min.js"></script>
+<script src="video/assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>
+<script src="video/assets/theme/js/script.js"></script>
   
  <?include("inc/pie.php")?>
  </body>
