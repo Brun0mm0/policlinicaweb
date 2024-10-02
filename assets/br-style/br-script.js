@@ -67,7 +67,7 @@ if(isPopupExpired()) {
     
     pages = [
         { type: 'video', id: 'video-popup' }, // Video YouTube
-        { type: 'image', src: '/assets/images/coseguros-julio.png' } // Imagen
+        { type: 'image', src: '/assets/images/coseguros-octubre.png' } // Imagen
     ];
     
     // Aquí puedes asegurarte de que el div #video-popup está presente antes de cargar el reproductor
