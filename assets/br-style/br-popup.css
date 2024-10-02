@@ -34,11 +34,13 @@
     padding: 10rem 0rem;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     opacity: 0;
 }
 
-.br-popup-modal > img{
-    max-height: 600px;
+#br-popup-modal-content > iframe,img {
+    max-width: 600px;
 }
 
 .br-popup-cerrar {
@@ -54,7 +56,6 @@
     width: 30px;
     height: 30px;
     cursor: pointer;
-    /* background: orangered; */
 }
 
 .br-cerrar span {
@@ -80,29 +81,44 @@
     transform: rotate(-45deg);
 }
 
-.br-popup-prev {
+.br-popup-prev, .br-popup-next {
     position: relative;
-    margin-right: 1rem;
     width: 20px;
-    height: 100%;
+    height: 20px;
     cursor: pointer;
 }
-.br-popup-prev span {
+
+.br-popup-prev {
+    margin-right: 1rem;
+} 
+
+.br-popup-next {
+    margin-left: 1rem;
+}
+
+.br-popup-prev span, .br-popup-next span {
     position: absolute;
     width: 100%;
     height: 4px;
     background-color: var(--primary);
     top: 50%;
     left: 0;
-    transform-origin: left;
     border-radius: 6px;
     transition: all .2s;
 }
-.br-popup-prev:hover {
+
+.br-popup-prev span {
+    transform-origin: left center;
+} 
+.br-popup-next span {
+    transform-origin: right center;
+}
+
+.br-popup-prev:hover, .br-popup-next:hover {
     animation-name: selected;
     animation-duration: .2s;
 }
-.br-popup-prev:hover span {
+.br-popup-prev:hover span, .br-popup-next:hover span {
     background-color: var(--hover);
 }
 
@@ -111,32 +127,6 @@
 }
 .br-popup-prev span:last-child {
     transform: rotate(-60deg) translateY(2px);
-}
-
-.br-popup-next {
-    position: relative;
-    margin-left: 1rem;
-    width: 20px;
-    height: 100%;
-    cursor: pointer;
-}
-.br-popup-next span {
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    background-color: var(--primary);
-    top: 50%;
-    left: 0;
-    transform-origin: right;
-    border-radius: 6px;
-    transition: all .2s;
-}
-.br-popup-next:hover {
-    animation-name: selected;
-    animation-duration: .2s;
-}
-.br-popup-next:hover span {
-    background-color: var(--hover);
 }
 
 .br-popup-next span:first-child {
@@ -149,9 +139,29 @@
 
 
 
-@media(max-width: 1024px) {
-    .br-popup-modal > img{
-        max-height: 400px;
+@media(max-width: 700px) {
+
+    .br-popup-modal-container {
+        flex-wrap: wrap;
+    }
+
+    #br-popup-modal-content {
+        order: 1;
+    }
+
+    .br-popup-prev {
+        margin-right: 3rem;
+        order: 2;
+    } 
+    
+    .br-popup-next {
+        margin-left: 3rem;
+        order: 3;
+    }
+
+
+    #br-popup-modal-content > iframe,img {
+        max-width: 100%;
     }
 }
 

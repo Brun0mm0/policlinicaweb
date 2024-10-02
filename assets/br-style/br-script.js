@@ -1,4 +1,7 @@
-const EXPIRATION_TIME = 600000;
+const EXPIRATION_TIME = 60000;
+let currentPage = 0; // Para rastrear la página actual
+let pages = [];
+
 
 function isPopupExpired() {
     const popupData = JSON.parse(localStorage.getItem('popupShown'));
@@ -25,10 +28,6 @@ const html =`
                 <span></span>
             </div>
                 <div id="br-popup-modal-content"></div>
-                <div id="video-popup"></div> <!-- Aquí va el video -->
-                <div>
-                    <img src="/assets/images/coseguros-julio.png" alt="imagen-coseguros"/>
-                </div>
             <div class="br-popup-next">
                 <span></span>
                 <span></span>
@@ -36,15 +35,24 @@ const html =`
         </div>
     </div>
     `
+    const contentVideo = `<div id="video-popup"></div> <!-- Aquí va el video -->`
+    const contentImg = `<div>
+                        <img src="/assets/images/coseguros-julio.png" alt="imagen-coseguros"/>
+                        </div>`
 
-window.addEventListener('DOMContentLoaded', ()=> {
-    const template = document.createElement('template');
+if(isPopupExpired()) {
+
+    window.addEventListener('DOMContentLoaded', ()=> {
+        const template = document.createElement('template');
     template.innerHTML = html;
     
     const container = template.content.querySelector(".br-popup-container");
     const btn = template.content.querySelector('.br-popup-cerrar');
+    const btnPrev = template.content.querySelector('.br-popup-prev');
+    const btnNext = template.content.querySelector('.br-popup-next');
     
     container.addEventListener('animationend', mostrar(0, container));
+    
     btn.addEventListener('click',()=> {
         container.classList.add('fade-out');
         container.addEventListener('animationend', ()=> {
@@ -52,8 +60,16 @@ window.addEventListener('DOMContentLoaded', ()=> {
         });
     });
     
+    btnPrev.addEventListener('click',showPrevPage)
+    btnNext.addEventListener('click',showNextPage)
+    
     document.body.appendChild(template.content);
-
+    
+    pages = [
+        { type: 'video', id: 'video-popup' }, // Video YouTube
+        { type: 'image', src: '/assets/images/coseguros-julio.png' } // Imagen
+    ];
+    
     // Aquí puedes asegurarte de que el div #video-popup está presente antes de cargar el reproductor
     if (document.getElementById('video-popup')) {
         createYouTubePlayer(); // Llama a la función para crear el reproductor de YouTube
@@ -63,8 +79,33 @@ window.addEventListener('DOMContentLoaded', ()=> {
         shown: true,
         timestamp: new Date().getTime() // Guardamos la hora actual en milisegundos
     };
-    // localStorage.setItem('popupShown', JSON.stringify(popupData));
+    
+    showPage(currentPage)
+    
+    localStorage.setItem('popupShown', JSON.stringify(popupData));
+
+    setTimeout(()=>{
+        container.classList.add('fade-out');
+        container.addEventListener('animationend', ()=> {
+            document.body.removeChild(container);
+        });
+    }, 40000)
 });
+}
+
+function showPage(index) {
+    const contentDiv = document.getElementById('br-popup-modal-content');
+    contentDiv.innerHTML = ''; // Limpiamos el contenido anterior
+
+    const page = pages[index];
+    
+    if (page.type === 'video') {
+        contentDiv.innerHTML = '<div id="video-popup"></div>'; // Añadimos el contenedor del video
+        createYouTubePlayer(); // Inicializamos el reproductor de YouTube
+    } else if (page.type === 'image') {
+        contentDiv.innerHTML = `<img src="${page.src}" alt="imagen-popup" />`; // Añadimos la imagen
+    }
+}
 
 const mostrar = function (elemento, container) {
     const modal = Array.from(container.querySelectorAll("#modal-novedad"));
@@ -78,20 +119,21 @@ const mostrar = function (elemento, container) {
 function createYouTubePlayer() {
     if (typeof YT !== 'undefined' && YT && YT.Player) { // Asegurarse de que la API de YouTube está cargada
         player = new YT.Player('video-popup', {
-            height: '600',
-            width: '900',
             videoId: 'csYJyuKetvg',
             playerVars: {
-                'controls': 2,         // Mostrar solo los controles mínimos
-                'rel': 0,              // No mostrar videos relacionados de otros canales
-                'modestbranding': 1,   // Minimiza el branding de YouTube
-                'playsinline': 1,      // Reproducción en línea en dispositivos móviles
-                'autoplay': 1,         // Reproducción automática
-                'mute': 1,             // Silencia el video al iniciar
-                'fs': 1,               // Habilitar el botón de pantalla completa
-                'iv_load_policy': 3,   // Desactivar las anotaciones
-                'showinfo': 0          // Inicia en silencio para permitir autoplay
-              },
+                'controls': 2,      
+                'rel': 0,           
+                'modestbranding': 1,
+                'playsinline': 1,   
+                'autoplay': 1,      
+                'mute': 1,          
+                'fs': 1,            
+                'iv_load_policy': 3,
+                'showinfo': 0
+            },
+            events: {
+                'onStateChange': onPlayerStateChange
+            }     
         });
     } else {
         console.log('API de YouTube aún no está lista. Intentando nuevamente...');
@@ -103,5 +145,27 @@ function createYouTubePlayer() {
 function onYouTubeIframeAPIReady() {
     if (document.getElementById('video-popup')) {
         createYouTubePlayer(); // Llama a la función para crear el reproductor de YouTube
+    }
+}
+
+// Mostrar la página anterior
+function showPrevPage() {
+    if (currentPage > 0) {
+        currentPage--;
+        showPage(currentPage);
+    }
+}
+
+// Mostrar la siguiente página
+function showNextPage() {
+    if (currentPage < pages.length - 1) {
+        currentPage++;
+        showPage(currentPage);
+    }
+}
+
+function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.ENDED) {
+        showNextPage(); // Cambiar a la siguiente página cuando el video termine
     }
 }
